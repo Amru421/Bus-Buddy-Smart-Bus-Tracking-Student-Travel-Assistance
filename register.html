@@ -1,0 +1,59 @@
+
+{% extends "base.html" %}
+
+{% block title %}Register | BusBuddy{% endblock %}
+
+{% block content %}
+
+<div class="auth-wrap">
+
+    <form class="form-card" method="POST">
+
+        <span class="eyebrow">JOIN BUSBUDDY</span>
+
+        <h1>Create Account</h1>
+
+        <p>Register to access your travel dashboard.</p>
+
+        <label>Full Name</label>
+
+        <input
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+            required
+        >
+
+        <label>Email Address</label>
+
+        <input
+            type="email"
+            name="email"
+            placeholder="you@example.com"
+            required
+        >
+
+        <label>Password</label>
+
+        <input
+            type="password"
+            name="password"
+            minlength="6"
+            placeholder="At least 6 characters"
+            required
+        >
+
+        <button class="btn primary full">
+            Create Account
+        </button>
+
+        <p class="form-foot">
+            Already registered?
+            <a href="{{ url_for('login') }}">Login</a>
+        </p>
+
+    </form>
+
+</div>
+
+{% endblock %}
