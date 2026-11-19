@@ -1,0 +1,122 @@
+
+{% extends "base.html" %}
+
+{% block title %}BusBuddy | Smart Travel{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-copy">
+
+        <span class="eyebrow">SMARTER EVERYDAY TRAVEL</span>
+
+        <h1>
+            Your bus journey,
+            <span>made simpler.</span>
+        </h1>
+
+        <p>
+            Find bus routes, check departure times,
+            view estimated arrivals and follow bus
+            locations through one simple platform.
+        </p>
+
+        <div class="actions">
+            <a class="btn primary"
+               href="{{ url_for('routes') }}">
+                Explore Buses
+            </a>
+
+            <a class="btn secondary"
+               href="{{ url_for('register') }}">
+                Create Account
+            </a>
+        </div>
+
+        <div class="hero-note">
+            Easy Route Discovery · Arrival Estimates · Student Friendly
+        </div>
+
+    </div>
+
+    <div class="hero-art">
+
+        <div class="map-card">
+
+            <div class="map-top">
+                <b>Today's Journey</b>
+                <span class="live-dot">● DEMO</span>
+            </div>
+
+            <div class="route-line">
+                <span class="pin">●</span>
+
+                <div>
+                    <b>Majestic</b>
+                    <small>Starting Point</small>
+                </div>
+            </div>
+
+            <div class="route-line">
+                <span class="pin end">●</span>
+
+                <div>
+                    <b>Electronic City</b>
+                    <small>Estimated arrival · 24 min</small>
+                </div>
+            </div>
+
+            <div class="mini-map">
+                🚌
+                <span>KA-01-AB-1234</span>
+                <small>Simulated bus location</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <div class="section-heading">
+        <span class="eyebrow">HOW IT WORKS</span>
+        <h2>Travel in Three Simple Steps</h2>
+    </div>
+
+    <div class="feature-grid">
+
+        <article class="feature">
+            <div class="feature-icon">🔎</div>
+            <h3>Search a Bus</h3>
+            <p>
+                Find available buses using your
+                starting point and destination.
+            </p>
+        </article>
+
+        <article class="feature">
+            <div class="feature-icon">🗺️</div>
+            <h3>View the Route</h3>
+            <p>
+                Check route details and see
+                simulated bus movement on a map.
+            </p>
+        </article>
+
+        <article class="feature">
+            <div class="feature-icon">⏱️</div>
+            <h3>Plan Your Time</h3>
+            <p>
+                Use estimated arrival times
+                to plan your journey.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+{% endblock %}
