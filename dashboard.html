@@ -1,0 +1,88 @@
+
+{% extends "base.html" %}
+
+{% block title %}Dashboard | BusBuddy{% endblock %}
+
+{% block content %}
+
+<div class="page-heading">
+
+    <div>
+        <span class="eyebrow">PASSENGER AREA</span>
+
+        <h1>
+            Hello, {{ session.get('name') }} 👋
+        </h1>
+
+        <p>Here are the available buses.</p>
+    </div>
+
+    <a class="btn primary" href="{{ url_for('routes') }}">
+        Find a Bus
+    </a>
+
+</div>
+
+<div class="stats">
+
+    <div class="stat">
+        <span>Available Buses</span>
+        <b>{{ buses|length }}</b>
+    </div>
+
+    <div class="stat">
+        <span>Service</span>
+        <b>Demo</b>
+    </div>
+
+    <div class="stat">
+        <span>Tracking</span>
+        <b>Simulated</b>
+    </div>
+
+</div>
+
+<h2 class="subheading">Available Buses</h2>
+
+<div class="bus-grid">
+
+    {% for bus in buses %}
+
+    <article class="bus-card">
+
+        <div class="bus-top">
+
+            <b>{{ bus.bus_number }}</b>
+
+            <span class="status {{ 'delayed' if bus.status == 'Delayed' else '' }}">
+                {{ bus.status }}
+            </span>
+
+        </div>
+
+        <div class="journey">
+            <b>{{ bus.source }}</b>
+            <span>→</span>
+            <b>{{ bus.destination }}</b>
+        </div>
+
+        <p>
+            Departure: {{ bus.departure }}
+        </p>
+
+        <a class="text-link"
+           href="{{ url_for('tracking', bus_id=bus.id) }}">
+            Track This Bus →
+        </a>
+
+    </article>
+
+    {% else %}
+
+    <p>No buses available.</p>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}
