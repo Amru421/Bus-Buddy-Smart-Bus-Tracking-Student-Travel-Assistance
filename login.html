@@ -1,0 +1,59 @@
+
+{% extends "base.html" %}
+
+{% block title %}Login | BusBuddy{% endblock %}
+
+{% block content %}
+
+<div class="auth-wrap">
+
+    <form class="form-card" method="POST">
+
+        <span class="eyebrow">WELCOME BACK</span>
+
+        <h1>Sign In</h1>
+
+        <p>Access your BusBuddy account.</p>
+
+        <label>Email Address</label>
+
+        <input
+            type="email"
+            name="email"
+            placeholder="you@example.com"
+            required
+        >
+
+        <label>Password</label>
+
+        <input
+            type="password"
+            name="password"
+            placeholder="Your password"
+            required
+        >
+
+        <button class="btn primary full">
+            Login
+        </button>
+
+        <p class="form-foot">
+            New to BusBuddy?
+            <a href="{{ url_for('register') }}">
+                Create an account
+            </a>
+        </p>
+
+        <div class="demo-login">
+            <b>Demo Admin Login</b>
+            <br>
+            Email: admin@busbuddy.com
+            <br>
+            Password: Admin123!
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}
